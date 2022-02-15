@@ -1,0 +1,76 @@
+footer {
+  margin-top: 10vmax;
+  padding: 2vmax;
+  color: white;
+  background-color: rgb(34, 33, 33);
+  display: flex;
+  align-items: center;
+}
+
+.leftFooetr {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.leftFooetr > h4 {
+  font-family: "Roboto";
+  font-size: 1vmax;
+}
+
+.leftFooetr > p {
+  text-align: center;
+  font-size: 1.2vmax;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.leftFooetr > img {
+  width: 10vmax;
+  margin: 1vmax;
+  cursor: pointer;
+}
+
+.middleFooetr {
+  width: 60%;
+  text-align: center;
+}
+
+.middleFooetr > h1 {
+  font-size: 4vmax;
+  font-family: "Roboto";
+  color: #eb4034;
+}
+
+.middleFooetr > p {
+  max-width: 60%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 1vmax auto;
+}
+
+.rightFooetr {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rightFooetr > h4 {
+  font-family: "Roboto";
+  font-size: 1.4vmax;
+  text-decoration: underline;
+}
+
+.rightFooetr > a {
+  text-decoration: none;
+  font-size: 1.3vmax;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: white;
+  transition: all 0.5s;
+  margin: 0.5vmax;
+}
+
+.rightFooetr > a:hover {
+  color: #eb4034;
+}
