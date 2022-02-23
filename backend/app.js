@@ -7,9 +7,13 @@ const order = require("./routes/orderRoute");
 
 const errorMiddleware = require("./middleware/error");
 const cookieParser = require("cookie-parser");
+const bodyParser = require("body-parser");
+const fileUploader = require("express-fileupload");
 
 app.use(express.json());
 app.use(cookieParser());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(fileUploader());
 
 app.use("/api/v1", product);
 app.use("/api/v1", user);
