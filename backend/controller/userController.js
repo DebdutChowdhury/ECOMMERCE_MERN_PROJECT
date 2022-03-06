@@ -165,15 +165,28 @@ exports.updatePassword = catchAsyncError(async (req, res, next) => {
   sendToken(user, 201, res);
 });
 
-// update proile
+// update profile
 exports.updateProile = catchAsyncError(async (req, res, next) => {
-  const newPofile = {
+  const newProfile = {
     name: req.body.name,
     email: req.body.email,
   };
-  // need to update avtar
-
-  const user = await User.findByIdAndUpdate(req.user.id, newPofile, {
+  //  update avatar
+  if (req.body.avatar !== "") {
+    const user = await User.findById(req.user.id);
+    const imageId = user.avatar.public_id;
+    await cloudinary.v2.uploader.destroy(imageId);
+    const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
+      folder: "avatars",
+      width: 150,
+      crop: "scale",
+    });
+    newProfile.avatar = {
+      public_id: myCloud.public_id,
+      url: myCloud.secure_url,
+    };
+  }
+  const user = await User.findByIdAndUpdate(req.user.id, newProfile, {
     new: true,
     runValidators: true,
     useFindAndModify: false,
